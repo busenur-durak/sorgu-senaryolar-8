@@ -1,0 +1,48 @@
+1. employee Tablosunun Oluşturulması
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    birthday DATE,
+    email VARCHAR(100)
+);
+
+ 2. Mockaroo ile 50 Adet Veri Ekleme
+Mockaroo sitesinden aşağıdaki yapı ile veri oluşturun:
+| Field Name | Type          |
+| ---------- | ------------- |
+| id         | Row Number    |
+| name       | Full Name     |
+| birthday   | Date (past)   |
+| email      | Email Address |
+
+3. 5 Adet UPDATE İşlemi (Her sütuna göre)
+-- 1. name'e göre birthday güncelle
+UPDATE employee SET birthday = '1999-01-01' WHERE name = 'John Smith';
+
+-- 2. email'e göre name güncelle
+UPDATE employee SET name = 'Updated Name' WHERE email = 'emily.davis@example.com';
+
+-- 3. id’ye göre email güncelle
+UPDATE employee SET email = 'new.email@example.com' WHERE id = 10;
+
+-- 4. birthday'e göre name güncelle
+UPDATE employee SET name = 'Birthday Person' WHERE birthday = '1985-06-15';
+
+-- 5. name’e göre email güncelle
+UPDATE employee SET email = 'updated@example.com' WHERE name = 'Sara Lee';
+
+4. 5 Adet DELETE İşlemi (Her sütuna göre)
+-- 1. name'e göre sil
+DELETE FROM employee WHERE name = 'John Smith';
+
+-- 2. email'e göre sil
+DELETE FROM employee WHERE email = 'updated@example.com';
+
+-- 3. id’ye göre sil
+DELETE FROM employee WHERE id = 5;
+
+-- 4. birthday'e göre sil
+DELETE FROM employee WHERE birthday = '1975-08-25';
+
+-- 5. name'e göre sil (farklı örnek)
+DELETE FROM employee WHERE name = 'Emily Davis';
